@@ -1,0 +1,192 @@
+<body class="sb-nav-fixed">
+
+    <!--Layout Sidenav Content-->
+    <section id="layoutSidenav_content">
+        <!--Main-->
+        <main class="content-padding1">
+            <!--Container Fluid-->
+            <div class="container-fluid">
+                <!--Page Content-->
+                <div class="page-content">
+                    <!--Page Header-->
+                    <div class="page-header border-bottom-dark">
+                        <h5 class="font-weight-bold mb-0">CUSTOMER-HISTORY</h5>
+ 
+                    </div>
+                    <!--End Page Header-->
+ 
+                    <div class="blog-post">
+                        <form name="editForm" role="form" novalidate (ngSubmit)="save()" 
+                            class="mt-2">
+                            <div class="row  loginsrn">
+ 
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                                    <!-- Form Group -->
+                                    <!-- <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                                        <label for="id" class="mb-2">ID</label>
+                                        <input type="text" class="form-control " id="id" name="id"
+                                            formControlName="id" />
+                                    </div> -->
+ 
+                                    
+                                        <!-- <div
+                                                    *ngIf="editForm.get('startDate')!.invalid && (editForm.get('startDate')!.dirty || editForm.get('startDate')!.touched)">
+                                                    <small class="form-text text-danger"
+                                                        *ngIf="editForm.get('startDate')?.errors?.required"
+                                                        >
+                                                        This field is required.
+                                                    </small>
+                                                    </div>   -->
+                                    <!-- </div> -->
+                                    <!-- Form Group -->
+                                    
+                                    <!-- Form Group -->
+                                    <div class="form-group mb-2">
+                                        <label for="field_customer Id" class="mb-2">Customer Id</label>
+                                        <input type="number" class="form-control " id="field_Customer Id"
+                                        placeholder="" name="Customer Id" formControlName="Customer Id">
+                                        <!-- <div
+                                       *ngIf="editForm.get('region')!.invalid && (editForm.get('region')!.dirty || editForm.get('region')!.touched)">
+                                       <small class="form-text text-danger"
+                                           *ngIf="editForm.get('region')?.errors?.required"
+                                           >
+                                           This field is required.
+                                       </small>
+                                       </div>   -->
+                                    </div>
+                                    <!-- Form Group -->
+
+                                    
+                                    
+                                    <div class="form-group mb-2">
+                                        <label for="field_Transaction Amount" class="mb-2">Transaction Amount</label>
+                                        <input type="number" class="form-control " id="field_Transaction Amount"
+                                            placeholder="" name="Transaction Amount" formControlName="Transaction Amount">
+                                        <!-- <div
+                                            *ngIf="editForm.get('tempClosureDate')!.invalid && (editForm.get('tempClosureDate')!.dirty || editForm.get('tempClosureDate')!.touched)">
+                                            <small class="form-text text-danger"
+                                                *ngIf="editForm.get('tempClosureDate')?.errors?.required"
+                                                >
+                                                This field is required.
+                                            </small>
+                                            </div>   -->
+                                    </div>
+                                   
+
+                                   
+                                    
+                                   
+                                 
+                              
+                                </div>
+                                
+
+
+
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                                    <div class="form-group mb-2">
+                                        <label for="field_Collected By" class="mb-2"> Collected By</label>
+                                        <input type="Text" class="form-control " id="field_Collected By"
+                                        placeholder="" name="Collected By" formControlName="Collected By">
+                                        <!-- <div
+                                       *ngIf="editForm.get('locationGroup')!.invalid && (editForm.get('locationGroup')!.dirty || editForm.get('locationGroup')!.touched)">
+                                       <small class="form-text text-danger"
+                                           *ngIf="editForm.get('locationGroup')?.errors?.required"
+                                           >
+                                           This field is required.
+                                       </small>
+                                       </div>   -->
+                                    </div>
+
+                                     <!-- Form Group -->
+                                     <div class="form-group mb-2">
+                                        <label for="field_reason" class="mb-2">Reason</label>
+                                        <input type="text" class="form-control " id="field_Reason"
+                                        placeholder="" name="reason" formControlName="reason">
+                                        <!-- <div
+                                            *ngIf="editForm.get('promotedTogether')!.invalid && (editForm.get('promotedTogether')!.dirty || editForm.get('promotedTogether')!.touched)">
+                                            <small class="form-text text-danger"
+                                                *ngIf="editForm.get('promotedTogether')?.errors?.required"
+                                                >
+                                                This field is required.
+                                            </small>
+                                            </div>   -->
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                                    <div class="form-group mb-2">
+                                        <label for="field_Date" class="mb-2">Date</label>
+                                        <input type="datetime-local" class="form-control " id="field_Date"
+                                        placeholder="" name="Date" formControlName="Date">
+                                        <!-- <div
+                                       *ngIf="editForm.get('workDayDetails')!.invalid && (editForm.get('workDayDetails')!.dirty || editForm.get('workDayDetails')!.touched)">
+                                       <small class="form-text text-danger"
+                                           *ngIf="editForm.get('workDayDetails')?.errors?.required"
+                                           >
+                                           This field is required.
+                                       </small>
+                                       </div>   -->
+                                    </div>
+                                    
+                                     <!--save and cancel-->
+                                    <div class="pull-right mt-2">
+                                        <button type="button" id="cancel-save" class="btn btn-danger mr-4">
+                                            
+                                            <span> <i class="fa fa-arrow-left mr-2" aria-hidden="true"></i>Cancel</span>
+                                        </button>
+                                        <button type="submit" id="save-entity" [disabled]=""
+                                            class="btn btn-success">
+                                            <span> <i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Save</span>
+                                        </button>
+                                    </div>
+
+
+                                </div> 
+
+                            </div>
+                           
+                        </form>
+                        <div class="clearfix"></div>
+
+
+
+
+                    </div>
+                    <!--End Page Content-->
+
+                </div>
+                <!-- End DataTales Start -->
+
+            </div>
+            <!--End ontainer Fluid-->
+        </main>
+        <!--End Main-->
+
+    </section>
+    <!--End Layout Sidenav Content-->
+
+</body>
+                                    
+                                    
+                                    
+                                    
+                                        
+                                    
+                                                 
+                                
+             
+                                
+                                                 
+             
+                                                 
+                                                 
+                                                
+                                                 
+                                                
+                                                 
+                                
+                            

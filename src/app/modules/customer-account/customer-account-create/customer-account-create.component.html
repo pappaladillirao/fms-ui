@@ -1,0 +1,235 @@
+<body class="sb-nav-fixed">
+
+   <!--Layout Sidenav Content-->
+   <section id="layoutSidenav_content">
+       <!--Main-->
+       <main class="content-padding1">
+           <!--Container Fluid-->
+           <div class="container-fluid">
+               <!--Page Content-->
+               <div class="page-content">
+                   <!--Page Header-->
+                   <div class="page-header border-bottom-dark">
+                       <h5 class="font-weight-bold mb-0">CUSTOMER-ACCOUNT</h5>
+
+                   </div>
+                   <!--End Page Header-->
+
+                   <div class="blog-post">
+                       <form name="editForm" role="form" novalidate (ngSubmit)="save()" 
+                           class="mt-2">
+                           <div class="row  loginsrn">
+
+                               <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                                   <!-- Form Group -->
+                                   <!-- <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                                       <label for="id" class="mb-2">ID</label>
+                                       <input type="text" class="form-control " id="id" name="id"
+                                           formControlName="id" />
+                                   </div> -->
+
+                                   
+                                       <!-- <div
+                                                   *ngIf="editForm.get('startDate')!.invalid && (editForm.get('startDate')!.dirty || editForm.get('startDate')!.touched)">
+                                                   <small class="form-text text-danger"
+                                                       *ngIf="editForm.get('startDate')?.errors?.required"
+                                                       >
+                                                       This field is required.
+                                                   </small>
+                                                   </div>   -->
+                                   <!-- </div> -->
+                                   <!-- Form Group -->
+                                   
+                                   <!-- Form Group -->
+                                   <div class="form-group mb-2">
+                                       <label for="field_Balance Amount" class="mb-2">Balance Amount</label>
+                                       <input type="number" class="form-control " id="field_Balance Amount"
+                                       placeholder="" name="Balance Amount" formControlName="Balance Amount">
+                                       <!-- <div
+                                      *ngIf="editForm.get('region')!.invalid && (editForm.get('region')!.dirty || editForm.get('region')!.touched)">
+                                      <small class="form-text text-danger"
+                                          *ngIf="editForm.get('region')?.errors?.required"
+                                          >
+                                          This field is required.
+                                      </small>
+                                      </div>   -->
+                                   </div>
+                                   <!-- Form Group -->
+
+                                   
+                                   
+                                   <div class="form-group mb-2">
+                                       <label for="field_Expected Duration" class="mb-2">Expected Duration</label>
+                                       <input type="number" class="form-control " id="field_Expected Duration"
+                                           placeholder="" name="Expected Duration" formControlName="Expected Duration">
+                                       <!-- <div
+                                           *ngIf="editForm.get('tempClosureDate')!.invalid && (editForm.get('tempClosureDate')!.dirty || editForm.get('tempClosureDate')!.touched)">
+                                           <small class="form-text text-danger"
+                                               *ngIf="editForm.get('tempClosureDate')?.errors?.required"
+                                               >
+                                               This field is required.
+                                           </small>
+                                           </div>   -->
+                                   </div>
+                                   <div class="form-group mb-2">
+                                    <label for="field_Interest Rate" class="mb-2">Interest Rate</label>
+                                    <input type="number" class="form-control " id="field_Interest Rate"
+                                    placeholder="" name="Interest Rate" formControlName="Interest Rate">
+                                    <!-- <div
+                                   *ngIf="editForm.get('workDayDetails')!.invalid && (editForm.get('workDayDetails')!.dirty || editForm.get('workDayDetails')!.touched)">
+                                   <small class="form-text text-danger"
+                                       *ngIf="editForm.get('workDayDetails')?.errors?.required"
+                                       >
+                                       This field is required.
+                                   </small>
+                                   </div>   -->
+                                </div>
+                                  
+
+                                  
+                                   
+                                  
+                                
+                             
+                               </div>
+                               
+
+
+
+                               <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                                   <div class="form-group mb-2">
+                                       <label for="field_Collected Duration" class="mb-2"> Collected Duration</label>
+                                       <input type="Text" class="form-control " id="field_Collected Duration"
+                                       placeholder="" name="Collected Duration" formControlName="Collected Duration">
+                                       <!-- <div
+                                      *ngIf="editForm.get('locationGroup')!.invalid && (editForm.get('locationGroup')!.dirty || editForm.get('locationGroup')!.touched)">
+                                      <small class="form-text text-danger"
+                                          *ngIf="editForm.get('locationGroup')?.errors?.required"
+                                          >
+                                          This field is required.
+                                      </small>
+                                      </div>   -->
+                                   </div>
+
+                                    <!-- Form Group -->
+                                    <div class="form-group mb-2">
+                                       <label for="field_Given Amount" class="mb-2">Given Amount</label>
+                                       <input type="number" class="form-control " id="field_Given Amount"
+                                       placeholder="" name="Given Amount" formControlName="Given Amount">
+                                       <!-- <div
+                                           *ngIf="editForm.get('promotedTogether')!.invalid && (editForm.get('promotedTogether')!.dirty || editForm.get('promotedTogether')!.touched)">
+                                           <small class="form-text text-danger"
+                                               *ngIf="editForm.get('promotedTogether')?.errors?.required"
+                                               >
+                                               This field is required.
+                                           </small>
+                                           </div>   -->
+                                   </div>
+
+                                   <div class="form-group mb-2">
+                                    <label for="field_Total Collected Amount" class="mb-2">Total Collected Amount</label>
+                                    <input type="number" class="form-control " id="field_Total Collected Amount"
+                                    placeholder="" name="Total Collected Amount" formControlName="Total Collected Amount">
+                                    <!-- <div
+                                   *ngIf="editForm.get('locationGroup')!.invalid && (editForm.get('locationGroup')!.dirty || editForm.get('locationGroup')!.touched)">
+                                   <small class="form-text text-danger"
+                                       *ngIf="editForm.get('locationGroup')?.errors?.required"
+                                       >
+                                       This field is required.
+                                   </small>
+                                   </div>   -->
+                                </div>
+
+                                   
+
+
+                               </div>
+
+
+                               <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                                   <div class="form-group mb-2">
+                                       <label for="field_Expected Amount" class="mb-2">Expected Amount</label>
+                                       <input type="number" class="form-control " id="field_Expected Amount"
+                                       placeholder="" name="Expected Amount" formControlName="Expected Amount">
+                                       <!-- <div
+                                      *ngIf="editForm.get('workDayDetails')!.invalid && (editForm.get('workDayDetails')!.dirty || editForm.get('workDayDetails')!.touched)">
+                                      <small class="form-text text-danger"
+                                          *ngIf="editForm.get('workDayDetails')?.errors?.required"
+                                          >
+                                          This field is required.
+                                      </small>
+                                      </div>   -->
+                                   </div>
+
+                                   <div class="form-group mb-2">
+                                    <label for="field_Interest Amount" class="mb-2">Interest Amount</label>
+                                    <input type="number" class="form-control " id="field_Interest Amount"
+                                    placeholder="" name="Interest Amount" formControlName="Interest Amount">
+                                    <!-- <div
+                                   *ngIf="editForm.get('workDayDetails')!.invalid && (editForm.get('workDayDetails')!.dirty || editForm.get('workDayDetails')!.touched)">
+                                   <small class="form-text text-danger"
+                                       *ngIf="editForm.get('workDayDetails')?.errors?.required"
+                                       >
+                                       This field is required.
+                                   </small>
+                                   </div>   -->
+                                </div>
+                                   
+                                    <!--save and cancel-->
+                                   <div class="pull-right mt-2">
+                                       <button type="button" id="cancel-save" class="btn btn-danger mr-4">
+                                           
+                                           <span> <i class="fa fa-arrow-left mr-2" aria-hidden="true"></i>Cancel</span>
+                                       </button>
+                                       <button type="submit" id="save-entity" [disabled]=""
+                                           class="btn btn-success">
+                                           <span> <i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Save</span>
+                                       </button>
+                                   </div>
+
+
+                               </div> 
+
+                           </div>
+                          
+                       </form>
+                       <div class="clearfix"></div>
+
+
+
+
+                   </div>
+                   <!--End Page Content-->
+
+               </div>
+               <!-- End DataTales Start -->
+
+           </div>
+           <!--End ontainer Fluid-->
+       </main>
+       <!--End Main-->
+
+   </section>
+   <!--End Layout Sidenav Content-->
+
+</body>
+                                   
+                                   
+                                   
+                                   
+                                       
+                                   
+                                                
+                               
+            
+                               
+                                                
+            
+                                                
+                                                
+                                               
+                                                
+                                               
+                                                
+                               
+                           

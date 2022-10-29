@@ -1,0 +1,77 @@
+<div class="container-fluid bg-gradient-light">
+  <!-- <div class="row justify-content-center zindex-10">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6"></div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="loginlogo pull-right">
+        <img src="../../content/images/iconma-logo.png" />
+      </div>
+    </div>
+  </div> -->
+  <div class="row justify-content-center zindex-10 hv-100 align-items-center">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="row align-items-center">
+        <div class="hiring"></div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 loginsrn">
+      <div class="row align-items-center complogin ml-5">
+        <div class="w-50 mx-5">
+          <h2 class="w-100 font-weight-bold">FMS</h2>
+          <form
+            class="mt-5"
+            role="form"
+            (ngSubmit)="login()"
+            [formGroup]="loginForm"
+          >
+            <!-- Input fields -->
+            <div class="form-group mb-4">
+              <label class="username-label" for="username"></label>
+              <input
+                type="text"
+                class="form-control h-25"
+                name="username"
+                id="username"
+                placeholder="Username"
+                formControlName="username"
+                #username
+              />
+            </div>
+            <div class="form-group mb-4">
+              <label for="password"></label>
+              <input
+                type="password"
+                class="form-control h-25"
+                name="password"
+                id="password"
+                placeholder="Password"
+                formControlName="password"
+              />
+            </div>
+            <div class="form-group mb-4">
+              <label
+                class="form-check-label d-flex align-items-center"
+                for="rememberMe"
+              >
+                <input
+                  type="checkbox"
+                  name="rememberMe"
+                  id="rememberMe"
+                  formControlName="rememberMe"
+                />
+                <span class="ml-1">Remember me</span>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 h-25">
+              Sign in
+            </button>
+          </form>
+          <div class="alert alert-danger" *ngIf="authenticationError">
+            <strong>Failed to sign in!</strong> Please check your credentials
+            and try again.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

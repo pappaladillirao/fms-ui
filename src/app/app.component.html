@@ -1,0 +1,929 @@
+<nav class="d-flex align-items-center justify-content-between" *ngIf="isAuthenticated()">
+  <div class="logo-details">
+    <!-- <i class='bx bxl-c-plus-plus'></i> -->
+    <span class="logo_name">FMS</span>
+    <i class="bx bs-menu bx-menu"></i>
+  </div>
+  <div class="main-nav-top d-flex align-items-center">
+    <div ngbDropdown class="d-inline-block ml-2">
+      <button  class="btn relative notif px-3">
+        <img src="../assets/img/menuwhite.svg" height="16" />
+      </button>
+      <button
+        class="btn relative notif pr-0 pl-3"
+        id="dropdownBasic1"
+        ngbDropdownToggle
+      >
+        <i class="fa fa-bell text-white bx-ms vertical-sub"></i>
+        <span class="badge badge-danger badge-counter absolute position-abs"
+          >16</span
+        >
+        <ng-template #emptyRecords>
+          <span class="badge badge-danger badge-counter absolute position-abs"
+            >0</span
+          >
+        </ng-template>
+        <!-- <span
+            class="badge badge-danger badge-counter absolute position-abs"
+            *ngIf="!NotReadNotifications">0</span
+          > -->
+      </button>
+      <div
+        ngbDropdownMenu
+        aria-labelledby="dropdownBasic1"
+        class="notifications-width dropdown-list dropdown-menu drp dropdown-menu-right shadows animated--grow-in w-380 border-radius1"
+      >
+        <div
+          class="d-flex align-items-center justify-content-between py-2 px-3 bg-f7"
+        >
+          <h6 class="bx-ms mb-2">Notifications Center</h6>
+          <h6 class="font-weight-md notif-in-count mb-2">16</h6>
+        </div>
+
+        <div class="ovr">
+          <button
+            ngbDropdownItem
+            class="dropdown-item item-border py-1 notif-item"
+          >
+            <div class="d-flex align-items-center px-3">
+              <div class="mr-3">
+                <div class="icon-circle bg-secondary">
+                  <i class="bx bx-money text-white bx-xs"></i>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="d-flex align-items-center justify-content-between w-287"
+                >
+                  <p class="font-weight-md notification-label over-text mb-0">
+                     Account Reports
+                  </p>
+                  <p class="small mb-0">
+                    <!-- {{ notification.createdDate | date: "mediumDate" }} -->
+                    02-06-2022
+                  </p>
+                </div>
+                <p class="notif-des over-text1 mb-0">
+                  Preparing accounting reports allows you to track your financial history, project future.
+                </p>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="ovr">
+          <button
+            ngbDropdownItem
+            class="dropdown-item item-border py-1 notif-item"
+          >
+            <div class="d-flex align-items-center px-3">
+              <div class="mr-3">
+                <div class="icon-circle bg-secondary">
+                  <i class="bx bx-user text-white bx-xs"></i>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="d-flex align-items-center justify-content-between w-287"
+                >
+                  <p class="font-weight-md notification-label over-text mb-0">
+                    Customers
+                  </p>
+                  <p class="small mb-0">
+                    <!-- {{ notification.createdDate | date: "mediumDate" }} -->
+                    12-07-2022
+                  </p>
+                </div>
+                <p class="notif-des over-text1 mb-0">
+                  A strategic customer management strategy can build lasting customer relationships and grow your business.
+                </p>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="ovr">
+          <button
+            ngbDropdownItem
+            class="dropdown-item item-border py-1 notif-item"
+          >
+            <div class="d-flex align-items-center px-3">
+              <div class="mr-3">
+                <div class="icon-circle bg-secondary">
+                  <i class="bx bx-money text-white bx-xs"></i>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="d-flex align-items-center justify-content-between w-287"
+                >
+                  <p class="font-weight-md notification-label over-text mb-0">
+                     Commission
+                  </p>
+                  <p class="small mb-0">
+                    <!-- {{ notification.createdDate | date: "mediumDate" }} -->
+                    04-07-2022
+                  </p>
+                </div>
+                <p class="notif-des over-text1 mb-0">
+                  Enabling the sales organization to quickly and accurately ensure that sales reps are properly compensated for their work.
+                </p>
+              </div>
+            </div>
+          </button>
+        </div>
+        <button
+          ngbDropdownItem
+          class="d-flex align-items-center justify-content-center all-notif bg-f7"
+          routerLink="/notification"
+          routerLinkActive="current"
+        >
+          <h6 class="font-md pt-2">View all notifications</h6>
+        </button>
+      </div>
+    </div>
+
+    <div ngbDropdown class="d-inline-block mr-3">
+      <button class="btn" id="dropdownBasic1" ngbDropdownToggle>
+        <span class="mr-2 d-none d-lg-inline text-gray-600 text-white"
+          >Administrator</span
+        >
+        <img
+          class="img-profile rounded-circle float-right"
+          src="assets/img/profile-img.png"
+        />
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="p-2">
+        <button
+          ngbDropdownItem
+          routerLink="/profile"
+          routerLinkActive="current"
+        >
+          <i class="bx bx-user mr-2 text-gray-400"></i>
+          My Profile
+        </button>
+        <button
+          ngbDropdownItem
+          routerLink="/role-management"
+          routerLinkActive="current"
+        >
+          <i class="bx bx-user mr-2 text-gray-400"></i>
+          Role Management
+        </button>
+        <button
+          ngbDropdownItem
+          routerLink="/menu-management"
+          routerLinkActive="current"
+        >
+          <i class="bx bx-menu mr-2 text-gray-400"></i>
+          Menu Management
+        </button>
+        <button
+          ngbDropdownItem
+          routerLink="/features"
+          routerLinkActive="current"
+        >
+          <i class="bx bx-menu mr-2 text-gray-400"></i>
+          Features
+        </button>
+        <button
+          ngbDropdownItem
+          routerLink="/user-management"
+          routerLinkActive="current"
+        >
+          <i class="bx bx-user mr-2 text-gray-400"></i>
+          User Management
+        </button>
+        <button
+          ngbDropdownItem
+          routerLink="/scheduler"
+          routerLinkActive="current"
+        >
+          <i class="bx bx-calendar mr-2 text-gray-400"></i>
+          Scheduler
+        </button>
+        <button
+          ngbDropdownItem
+          routerLink="/publish-forecast"
+          routerLinkActive="current"
+        >
+          <i class="bx bx-news mr-2 text-gray-400"></i>
+          Publish Forecast
+        </button>
+        <button
+          ngbDropdownItem
+          routerLink="/configuration-settings"
+          routerLinkActive="current"
+        >
+          <i class="bx bx-cog mr-2 text-gray-400"></i>
+          Configuration-settings
+        </button>
+        <button ngbDropdownItem routerLink="/login" routerLinkActive="current" (click)="logout()">
+          <i class="bx bx-log-out-circle mr-2 text-gray-400"></i>
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="sidebar close" *ngIf="isAuthenticated()">
+  <div>
+    <ul class="nav-links sidemenu-overflow">
+      <span>
+        <li>
+          <div class="iocn-link" id="handle1">
+            <a type="button" routerLinkActive="current">
+              <i class="bx bx-crown" aria-hidden="true"></i>
+              <span class="link_name">customer</span>
+            </a>
+            <i class="bx bxs-chevron-down arrow"></i>
+          </div>
+          <ul class="sub-menu">
+            <li>
+              <a type="button" routerLink="/frequency" routerLinkActive="current">
+                <i class="bx bx-user mr-2 custom-icon"></i>
+                Frequency
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/forecastAccuracy" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Forecast Accuracy
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/sales-data-type" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Sales Data Type
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/locationType" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Location Type
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/promotionType" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Promotion Type
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/exceptionType" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Exception Type
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/meetingType" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Meeting Type
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/emailTemplate" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Email Template
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/notificationTemplate" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Notification Template
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/steps" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Steps
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/tactic" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Tactic
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/calenderType" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Calender Type
+              </a>
+            </li>
+           
+            <li>
+              <a type="button" routerLink="/cleansingModel" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Cleansing Model
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/currency" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Currency
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/demandStatus" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Demand Status
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/market" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Market
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/features" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Features
+              </a>
+            </li>
+          </ul>
+          </li>
+          <li>
+            <div class="iocn-link" id="handle1">
+              <a type="button" routerLinkActive="current">
+                <i class="bx bx-crown" aria-hidden="true"></i>
+                <span class="link_name">Customer Accounts</span>
+              </a>
+              <i class="bx bxs-chevron-down arrow"></i>
+            </div>
+            <ul class="sub-menu">
+              <li>
+                <a type="button" routerLink="/market" routerLinkActive="current">
+                  <i class="bx bx-user mr-2 custom-icon"></i>
+                  Market
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/channel" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Channel
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/category" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Category
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/brand" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Brand
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/product" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Product
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/product-groups" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Product Groups
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/location" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Location
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/locationType" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Location Type
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/location-groups" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Location Groups
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/uom" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Unit Of Measure
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/holiday-group" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Holiday Group
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/seasonality-group" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Seasonality Group
+                </a>
+              </li>
+             
+              <li>
+                <a type="button" routerLink="/workday-details" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Work Day
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/period" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Period
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/region" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Region
+                </a>
+             
+            </ul>
+            </li>
+        <li>
+          <div class="iocn-link" id="handle1">
+            <a type="button" routerLinkActive="current">
+              <i class="bx bx-crown" aria-hidden="true"></i>
+              <span class="link_name">Customer History</span>
+            </a>
+            <i class="bx bxs-chevron-down arrow"></i>
+          </div>
+          <ul class="sub-menu">
+            <li>
+              <a type="button" routerLink="/ageGroup" routerLinkActive="current">
+                <i class="bx bx-user mr-2 custom-icon"></i>
+                Age Group
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/strategy" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Strategy
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/saleType" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Sale Type
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/storeType" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Store Type
+              </a>
+            </li>
+            
+            <li>
+              <a type="button" routerLink="/promotionStatus" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Promotion Status
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/supplier" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Supplier
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/marketSpendGroup" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Market Spend Group
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/productSpendGroup" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Product Spend Group
+              </a>
+            </li>
+            <li>
+              <a type="button" routerLink="/promotionTypes" routerLinkActive="current">
+                <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                Promotion Types
+              </a>
+            </li>
+          </ul>
+          </li>
+
+          <li>
+            <div class="iocn-link" id="handle1">
+              <a type="button" routerLinkActive="current">
+                <i class="bx bx-bus" aria-hidden="true"></i>
+                <span class="link_name">FMS</span>
+              </a>
+              <i class="bx bxs-chevron-down arrow"></i>
+            </div>
+            <ul class="sub-menu">
+              <li>
+                <a type="button" routerLink="/truckStatus" routerLinkActive="current">
+                  <i class="bx bx-user mr-2 custom-icon"></i>
+                  Truck Status
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/schedulesStatus" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Schedules Status
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/equipmentLength" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Equipment Length
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/equipmentType" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Equipment Type
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/commodityType" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Commodity Type
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/loadType" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Load Type
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/volumeLoadType" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                 Volume Load Type
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/paymentMethod" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Payment Method
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/temperatureType" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Temperature Type
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/pocType" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  POC Type
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/weightType" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Weight Type
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/loadStatus" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Load Status
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/recordLogStatus" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Record Log Status
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/financialCategory" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Financial Category
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/packType" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Pack Type
+                </a>
+              </li>
+              <li>
+                <a type="button" routerLink="/loadSize" routerLinkActive="current">
+                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
+                  Load Size
+                </a>
+              </li>
+             
+            </ul>
+            </li>
+
+      </span>
+    </ul>
+  </div>
+</div>
+<section class="home-section">
+  <div class="home-content">
+    <router-outlet></router-outlet>
+    <!-- <app-load-management></app-load-management> -->
+    <!-- <app-create-load></app-create-load> -->
+    <!-- <app-vehicle-list></app-vehicle-list> -->
+    <!-- <app-vehicle-create></app-vehicle-create> -->
+    <!-- <app-vehicle-view></app-vehicle-view> -->
+    <!-- <app-fuel-list></app-fuel-list> -->
+    <!-- <app-fuel-create></app-fuel-create> -->
+    <!-- <app-fuel-view></app-fuel-view> -->
+    <!-- <app-driver-list></app-driver-list> -->
+    <!-- <app-driver-create></app-driver-create> -->
+    <!-- <app-driver-view></app-driver-view> -->
+  </div>
+</section>
+<footer class="bg-dark px-2 btm-cls">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-6 d-flex align-items-center py-1">
+      <img src="../../../assets/img/fav icon 32.svg" height="30" />
+      <span class="ml-2 text-white font-weight-md">PROTEUS</span>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-6 d-flex justify-content-center">
+      <ul class="terms">
+        <li class="pr-3" routerLink="/termsconditions">Terms & Conditions</li>
+        <li routerLink="/privacypolicy">Privacy Policy</li>
+      </ul>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-6"></div>
+  </div>
+</footer>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: "Poppins", sans-serif; */
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    height: 100%;
+    width: 224px;
+    background: #4b7fad;
+    z-index: 100;
+    height: calc(100vh - 88px);
+    transition: all 0.5s ease;
+  }
+
+  .sidebar.close {
+    width: 42px;
+  }
+
+  .sidebar .logo-details {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .sidebar .logo-details i {
+    font-size: 24px;
+    color: #fff;
+    height: 50px;
+    min-width: 42px;
+    text-align: center;
+    line-height: 50px;
+  }
+
+  .sidebar .logo-details .logo_name {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s ease;
+    transition-delay: 0.1s;
+  }
+
+  .sidebar.close .logo-details .logo_name {
+    transition-delay: 0s;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .sidebar .nav-links {
+    height: 100%;
+    /* padding: 30px 0 150px 0; */
+    padding: 0px 0 40px 0;
+    overflow: auto;
+  }
+
+  .sidebar.close .nav-links {
+    overflow: visible;
+  }
+
+  .sidebar .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar .nav-links li {
+    position: relative;
+    list-style: none;
+    padding: 0px 4px;
+    transition: all 0.4s ease;
+  }
+
+  .sidebar .nav-links li:hover {
+    background: #4b7fad;
+  }
+
+  .sidebar .nav-links li .iocn-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sidebar.close .nav-links li .iocn-link {
+    display: block;
+  }
+
+  .sidebar .nav-links li i {
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 6px;
+  }
+
+  .sidebar .nav-links li.showMenu i.arrow {
+    transform: rotate(-180deg);
+  }
+
+  .sidebar.close .nav-links i.arrow {
+    display: none;
+  }
+
+  .sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 13px;
+    padding-left: 8px;
+    white-space: pre;
+    max-width: 100%;
+  }
+
+  .sidebar .nav-links li a .link_name {
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    transition: all 0.4s ease;
+  }
+
+  .sidebar.close .nav-links li a .link_name {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .sidebar .nav-links li .sub-menu {
+    padding: 6px 12px 13px 20px;
+    margin-top: -10px;
+    background: #4b7fad;
+    display: none;
+  }
+
+  .sidebar .nav-links li.showMenu .sub-menu {
+    display: block;
+  }
+
+  .sidebar .nav-links li .sub-menu a {
+    color: #fff;
+    font-size: 15px;
+    padding: 2.5px 0;
+    white-space: pre;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+
+  .sidebar .nav-links li .sub-menu a:hover {
+    opacity: 1;
+  }
+
+  .sidebar.close .nav-links li .sub-menu {
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-top: 0;
+    padding: 6px 2px;
+    border-radius: 0 6px 6px 0;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+    transition: 0s;
+  }
+
+  .sidebar.close .nav-links li:hover .sub-menu {
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+  }
+
+  .sidebar .nav-links li .sub-menu .link_name {
+    display: none;
+  }
+
+  .sidebar.close .nav-links li .sub-menu .link_name {
+    font-size: 12px;
+    opacity: 1;
+    display: block;
+  }
+
+  .sidebar .nav-links li .sub-menu.blank {
+    opacity: 1;
+    pointer-events: auto;
+    padding: 3px 20px 6px 16px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* .sidebar .nav-links li:hover .sub-menu.blank {
+    top: 50%;
+    transform: translateY(-50%);
+  } */
+
+  .home-section {
+    position: relative;
+    background: #fff;
+    /* height: 100vh; */
+    height: calc(100vh - 94px);
+    overflow-y: auto;
+    left: 224px;
+    width: calc(100% - 224px);
+    transition: all 0.5s ease;
+    overflow-x: hidden;
+  }
+
+  .sidebar.close ~ .home-section {
+    left: 42px;
+    width: calc(100% - 42px);
+  }
+
+  .home-section .home-content {
+    max-height: calc(100vh - 94px);
+    overflow-y: auto;
+  }
+
+  .home-section .home-content .bs-menu,
+  .home-section .home-content .text {
+    color: #4b7fad;
+    font-size: 35px;
+  }
+
+  .home-section .home-content .bs-menu {
+    margin: 0 15px;
+    cursor: pointer;
+  }
+
+  .home-section .home-content .text {
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+  @media (max-width: 420px) {
+    .sidebar.close .nav-links li .sub-menu {
+      display: none;
+    }
+  }
+
+  a {
+    font-size: 11px !important;
+  }
+
+  nav {
+    height: 54px;
+    background-color: #4b7fad;
+    color: #fff;
+  }
+
+  .logo-details .logo_name {
+    font-size: 16px;
+  }
+
+  .logo-details .bx-menu {
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 8px;
+  }
+
+  body {
+    background-color: transparent !important;
+  }
+
+  .logo-details {
+    width: 260px;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+  }
+</style>
