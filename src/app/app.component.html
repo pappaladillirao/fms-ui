@@ -160,22 +160,8 @@
           <i class="bx bx-user mr-2 text-gray-400"></i>
           My Profile
         </button>
-        <button
-          ngbDropdownItem
-          routerLink="/role-management"
-          routerLinkActive="current"
-        >
-          <i class="bx bx-user mr-2 text-gray-400"></i>
-          Role Management
-        </button>
-        <button
-          ngbDropdownItem
-          routerLink="/menu-management"
-          routerLinkActive="current"
-        >
-          <i class="bx bx-menu mr-2 text-gray-400"></i>
-          Menu Management
-        </button>
+        
+       
         <button
           ngbDropdownItem
           routerLink="/features"
@@ -200,22 +186,8 @@
           <i class="bx bx-calendar mr-2 text-gray-400"></i>
           Scheduler
         </button>
-        <button
-          ngbDropdownItem
-          routerLink="/publish-forecast"
-          routerLinkActive="current"
-        >
-          <i class="bx bx-news mr-2 text-gray-400"></i>
-          Publish Forecast
-        </button>
-        <button
-          ngbDropdownItem
-          routerLink="/configuration-settings"
-          routerLinkActive="current"
-        >
-          <i class="bx bx-cog mr-2 text-gray-400"></i>
-          Configuration-settings
-        </button>
+        
+      
         <button ngbDropdownItem routerLink="/login" routerLinkActive="current" (click)="logout()">
           <i class="bx bx-log-out-circle mr-2 text-gray-400"></i>
           Logout
@@ -230,394 +202,54 @@
       <span>
         <li>
           <div class="iocn-link" id="handle1">
-            <a type="button" routerLinkActive="current">
+            <a type="button" routerLink="/customer" >
               <i class="bx bx-crown" aria-hidden="true"></i>
-              <span class="link_name">customer</span>
+              <span class="link_name">Customer</span>
             </a>
             <i class="bx bxs-chevron-down arrow"></i>
           </div>
-          <ul class="sub-menu">
+           <ul class="sub-menu">
             <li>
-              <a type="button" routerLink="/frequency" routerLinkActive="current">
+              <a type="button" routerLink="/customer" routerLinkActive="current">
                 <i class="bx bx-user mr-2 custom-icon"></i>
-                Frequency
+                Customer
+              </a>
+            </li>
+
+            <li>
+              <a type="button" routerLink="/customeraccount" routerLinkActive="current">
+                <i class="bx bx-user mr-2 custom-icon"></i>
+                Customer Account
               </a>
             </li>
             <li>
-              <a type="button" routerLink="/forecastAccuracy" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Forecast Accuracy
+              <a type="button" routerLink="/customerhistory" routerLinkActive="current">
+                <i class="bx bx-user mr-2 custom-icon"></i>
+                Customer History
               </a>
             </li>
-            <li>
-              <a type="button" routerLink="/sales-data-type" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Sales Data Type
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/locationType" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Location Type
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/promotionType" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Promotion Type
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/exceptionType" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Exception Type
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/meetingType" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Meeting Type
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/emailTemplate" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Email Template
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/notificationTemplate" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Notification Template
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/steps" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Steps
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/tactic" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Tactic
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/calenderType" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Calender Type
-              </a>
-            </li>
-           
-            <li>
-              <a type="button" routerLink="/cleansingModel" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Cleansing Model
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/currency" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Currency
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/demandStatus" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Demand Status
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/market" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Market
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/features" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Features
-              </a>
-            </li>
+          
           </ul>
           </li>
-          <li>
-            <div class="iocn-link" id="handle1">
-              <a type="button" routerLinkActive="current">
-                <i class="bx bx-crown" aria-hidden="true"></i>
-                <span class="link_name">Customer Accounts</span>
-              </a>
-              <i class="bx bxs-chevron-down arrow"></i>
-            </div>
-            <ul class="sub-menu">
-              <li>
-                <a type="button" routerLink="/market" routerLinkActive="current">
-                  <i class="bx bx-user mr-2 custom-icon"></i>
-                  Market
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/channel" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Channel
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/category" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Category
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/brand" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Brand
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/product" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Product
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/product-groups" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Product Groups
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/location" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Location
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/locationType" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Location Type
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/location-groups" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Location Groups
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/uom" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Unit Of Measure
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/holiday-group" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Holiday Group
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/seasonality-group" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Seasonality Group
-                </a>
-              </li>
-             
-              <li>
-                <a type="button" routerLink="/workday-details" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Work Day
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/period" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Period
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/region" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Region
-                </a>
-             
-            </ul>
-            </li>
-        <li>
-          <div class="iocn-link" id="handle1">
-            <a type="button" routerLinkActive="current">
-              <i class="bx bx-crown" aria-hidden="true"></i>
-              <span class="link_name">Customer History</span>
-            </a>
-            <i class="bx bxs-chevron-down arrow"></i>
-          </div>
-          <ul class="sub-menu">
-            <li>
-              <a type="button" routerLink="/ageGroup" routerLinkActive="current">
-                <i class="bx bx-user mr-2 custom-icon"></i>
-                Age Group
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/strategy" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Strategy
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/saleType" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Sale Type
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/storeType" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Store Type
-              </a>
-            </li>
-            
-            <li>
-              <a type="button" routerLink="/promotionStatus" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Promotion Status
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/supplier" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Supplier
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/marketSpendGroup" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Market Spend Group
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/productSpendGroup" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Product Spend Group
-              </a>
-            </li>
-            <li>
-              <a type="button" routerLink="/promotionTypes" routerLinkActive="current">
-                <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                Promotion Types
-              </a>
-            </li>
-          </ul>
-          </li>
+         
 
           <li>
             <div class="iocn-link" id="handle1">
               <a type="button" routerLinkActive="current">
-                <i class="bx bx-bus" aria-hidden="true"></i>
-                <span class="link_name">FMS</span>
+                <i class="bx bx-crown" aria-hidden="true"></i>
+                <span class="link_name">Employees</span>
               </a>
               <i class="bx bxs-chevron-down arrow"></i>
             </div>
+
             <ul class="sub-menu">
               <li>
-                <a type="button" routerLink="/truckStatus" routerLinkActive="current">
+                <a type="button" routerLink="/employees" routerLinkActive="current">
                   <i class="bx bx-user mr-2 custom-icon"></i>
-                  Truck Status
+                  Employees
                 </a>
               </li>
-              <li>
-                <a type="button" routerLink="/schedulesStatus" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Schedules Status
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/equipmentLength" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Equipment Length
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/equipmentType" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Equipment Type
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/commodityType" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Commodity Type
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/loadType" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Load Type
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/volumeLoadType" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                 Volume Load Type
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/paymentMethod" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Payment Method
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/temperatureType" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Temperature Type
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/pocType" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  POC Type
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/weightType" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Weight Type
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/loadStatus" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Load Status
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/recordLogStatus" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Record Log Status
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/financialCategory" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Financial Category
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/packType" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Pack Type
-                </a>
-              </li>
-              <li>
-                <a type="button" routerLink="/loadSize" routerLinkActive="current">
-                  <i class="bx bx-list-ul mr-2 custom-icon"></i>
-                  Load Size
-                </a>
-              </li>
-             
-            </ul>
+              </ul>
             </li>
 
       </span>

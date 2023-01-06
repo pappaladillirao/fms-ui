@@ -23,16 +23,24 @@ import { RouterModule, Routes } from '@angular/router';
       },
 
       {
-        path: 'customer-account',
+        path: 'customeraccount',
         loadChildren: () =>
          import('./modules/customer-account/customer-account.module').then((m) => m.CustomerAccountModule),
       },
 
       {
-        path: 'customer-history',
+        path: 'customerhistory',
         loadChildren: () =>
          import('./modules/customer-history/customer-history.module').then((m) => m.CustomerHistoryModule),
       },
+
+      {
+        path: 'employees',
+        loadChildren:() =>
+        import('./modules/employees/employees.module').then((m) =>m.EmployeesModule),
+      }
+
+      
 
 
 

@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import {  ICustomer } from "src/app/shared/model/customer.model";
+import { IEmployees } from "src/app/shared/model/employyes.model";
 import { createRequestOption } from "src/app/util/request-util";
 // import { createRequestOption } from "src/app/shared/util/request-util";
 
@@ -10,27 +11,38 @@ type EntityResponseType = HttpResponse<ICustomer>;
 type EntityArrayResponseType = HttpResponse<ICustomer[]>;
 
 @Injectable({ providedIn: "root" })
-export class CustomerService {
+export class EmployeesService {
+  
+  
+ 
+ 
   
   
   
 
-  public resourceUrl = "http://localhost:8080/api/customer";
+  public resourceUrl = "http://localhost:8080/api/employees";
 
 
- constructor(protected http: HttpClient) {}
 
-  create(customer: ICustomer): Observable<EntityResponseType> {
+
+  constructor(protected http: HttpClient) {}
+
+  create(employee: IEmployees): Observable<EntityResponseType> {debugger;
     return this.http
-      .post<ICustomer>(this.resourceUrl, customer, { observe: "response" })
+      .post<IEmployees>(this.resourceUrl, employee, { observe: "response" })
       .pipe(map((res: EntityResponseType) => res));
   }
 
-  getcustomerlist():Observable<any> {debugger;
+  
+ 
+
+
+
+  getemployeeslist():Observable<any> {
     return this.http
     .get<any>(this.resourceUrl,{observe:"response"})
     .pipe(map((res:any)=>res));
-  }
+  } 
 
   update(customer: ICustomer): Observable<EntityResponseType> {
     return this.http
@@ -57,10 +69,14 @@ export class CustomerService {
 
   }
 
-  getCustomerbyId(id:any) {
-    return this.http.get<ICustomer>(`${this.resourceUrl}/`+id,{
+ 
+
+  getEmployeebyId(id:any) {debugger;
+    return this.http
+    .get<IEmployees>(`${this.resourceUrl}/`+id,{
       observe:"response"
     })
+    
     .pipe(map((res:EntityResponseType)=>res));
   }
 

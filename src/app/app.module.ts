@@ -63,6 +63,7 @@ import { RecruitersSharedModule } from './shared/shared.module';
 
 
 
+
 const modules = [
   MatButtonModule,
   MatFormFieldModule,
@@ -71,7 +72,7 @@ const modules = [
 ];
 
 @NgModule({
-   declarations: [AppComponent, ],
+   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -91,6 +92,7 @@ const modules = [
     MatInputModule,
     MatListModule,
     NgxExtendedPdfViewerModule,
+    
    
   ],
   exports: [

@@ -12,7 +12,7 @@
                         <!--row-->
                         <div class="d-flex justify-content-between align-items-center">
 
-                            <h5 class="font-weight-bold mb-0">Customer Account</h5>
+                            <h5 class="font-weight-bold mb-0">Customer</h5>
 
                             <div class="d-flex py-1">
 
@@ -75,7 +75,7 @@
                             
 
                               
-                                <button [routerLink]="['/customeraccount/new']"
+                                <button [routerLink]="['/employees/new']"
                                     class="btn btn-danger btn-create p-0 m-0 d-flex align-items-center justify-content-center"
                                     type="submit">
                                     <img src="./assets/img/plus.svg" class="m-16">
@@ -93,65 +93,44 @@
                             <thead>
                                 <tr>
                                     <th scope="col">S.No</th>
-                                    <!--<th scope="col">Customer Id</th>-->
-                                    <th scope="col">Account Number</th>
-                                    <th scope="col">Expected Duration</th>
-                                    <th scope="col">Collected Duration</th>
-                                    <th scope="col">Interest Amount</th>
-                                    <th scope="col">Interest Rate</th>
-                                    <th scope="col">Given Amount</th>
-                                    <th scope="col">Balance Amount</th>
-                                    <th scope="col">Expected Amount</th>
-                                    <th scope="col">Total Collected Amount</th>
+                                    <th scope="col">Employee Name</th>
+                                    <th scope="col">Employee Salary Type</th>
+                                    <th scope="col">Joining Date</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Primary Contact</th>
+                                    <th scope="col">Secondary Contact</th>
                                     <th scope="col">Action</th>
-
-
-                                   
-                                   
+                                                                  
+                                                                      
                                     
-                                    
-                                    
-                               
-                                </tr>
+                               </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let customeraccount of customeraccountList">
-                                    <td>{{customeraccount.id}}</td>
-                                   <!-- <td>{{customeraccount.customerId}}</td> -->
-                                    <td >{{customeraccount.accountNumber}}</td>
-                                    <td>{{customeraccount.expectedDuration}}</td>
-                                    <td>{{customeraccount.collectedDuration}}</td>
-                                    <td>{{customeraccount.interestAmount}}</td>
-                                    <td>{{customeraccount.interestRate}}</td>
-                                    <td>{{customeraccount.givenAmount}}</td>
-                                    <td>{{customeraccount.balanceAmount}}</td>
-                                    <td>{{customeraccount.expectedAmount}}</td>
-                                    <td>{{customeraccount.totalCollectedAmount}}</td>
+                                <tr *ngFor="let employees of employeesList">
+                                    <td>{{employees.id}}</td>
+                                    <td>{{employees.employeeName}}</td>
+                                    <td>{{employees.employeeSalaryType}}</td>
+                                    <td>{{employees.joiningDate}}</td>
+                                    <td>{{employees.address}}</td>
+                                    <td>{{employees.primaryContact}}</td>
+                                    <td>{{employees.secondaryContact}}</td>
+                                   
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                     <td>
-                                        <button [routerLink]="['/customeraccount', customeraccount.customerId, 'view']"
+                                 
+                                
+                                    <td>
+                                        <button [routerLink]="['/employees', employees.id, 'view']"
                                             class="btn  btn-xs tableicon bluclr btn-view-hover" data-title="Edit" data-toggle="modal"
-                                            data-target="#edit"><i class="fa fa-eye color-green"
+                                            data-target="#edit"  ><i class="fa fa-eye color-green"
                                                 aria-hidden="true"></i></button>
-                                        <button [routerLink]="['/customeraccount', customeraccount.id, 'edit']"
+                                        <button [routerLink]="['/employees', employees.id, 'edit']"
                                             class="btn btn-xs tableicon bluclr btn-edit-hover" data-title="Edit" data-toggle="modal"
                                             data-target="#edit"><i class="fa fa-edit color-blue"
                                                 aria-hidden="true"></i></button>
                                         <button class="btn btn-xs tableicon bluclr btn-delete-hover" data-title="Edit"
-                                            data-toggle="modal" data-target="#edit" (click)="delete(customeraccount)"><i class="fa fa-trash  color-red"
+                                            data-toggle="modal" data-target="#edit" (click)="delete(employees)"><i class="fa fa-trash  color-red"
                                                 aria-hidden="true"></i></button>
-                                        <button [routerLink]="['/customerhistory/new']" class="btn btn-danger mr-2" data-title="Edit"
-                                            data-toggle="modal" data-target="#edit" (click)="delete(customeraccount)"><span><i class="fa fa-arrow-left mr-2
-                                              aria-hidden=true"></i>collection</span></button>
-                                              
-                                                
                                     </td>
 
                                 </tr>
@@ -185,3 +164,4 @@
         <!--End Main-->
     
     <!--End Layout Sidenav Content-->
+

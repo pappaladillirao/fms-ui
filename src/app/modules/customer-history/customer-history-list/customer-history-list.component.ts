@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerHistoryService } from '../customer-history.service';
 
 @Component({
   selector: 'app-customer-history-list',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer-history-list.component.scss']
 })
 export class CustomerHistoryListComponent implements OnInit {
+  customerhistoryList:any=[];
 
-  constructor() { }
+  constructor( private customerHistoryService:CustomerHistoryService) { }
 
   ngOnInit(): void {
-  }
+  this.customerHistoryService.getCustomerhistoryList().subscribe((res:any)=>{
+debugger;
+  this.customerhistoryList=res.body
 
+  })
+
+  }
+  delete(obj:any){
+
+  }
 }

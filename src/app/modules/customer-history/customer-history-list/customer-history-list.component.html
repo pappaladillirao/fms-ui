@@ -1,1 +1,162 @@
-<p>customer-history-list works!</p>
+
+<body class="sb-nav-fixed">
+    <!--Layout Sidenav Content-->
+    <section id="layoutSidenav_content">
+        <!--Main-->
+        <main class="content-padding1">
+            <!--Container Fluid-->
+            <div class="container-fluid">
+                <!--Page Content-->
+                <div class="page-content">
+                    <!--Page Header-->
+                    <div class="page-header border-bottom-dark">
+                        <!--row-->
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <h5 class="font-weight-bold mb-0">Customer History</h5>
+
+                            <div class="d-flex py-1">
+
+                                <input class="form-control form-control-borderless src_fild rounded-lg mr-3"
+                                    type="search" placeholder="Search here">
+                                    
+                                      <!-- <button type="button" class="btn btn-outline-danger mr-2 d-flex align-items-center"
+                                    (click)="open(content)">Settings</button>
+
+                                      <ng-template #content let-modal>
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="modal-basic-title">Settings Page</h5>
+                                          </div>
+                                          <div class="modal-body">
+                                            <div class="overflow-div">
+                                                
+                                            <label style="float: right;" class="custom-file-upload btn btn-outline-danger mr-2  align-items-center ">
+                                                <i class="fa fa-arrow-down mr-2" aria-hidden="true"></i> Import
+                                                <input type="file" name="file" accept=".csv,.xlsx" (change)="selectFile($event)"/>
+                                            </label>
+                                           </div>
+                                           <p></p>
+                                            <div class="row  loginsrn">
+
+                                                <div class="col-10 col-sm-10 col-md-2 col-lg-2">
+                                                <input type="text"style="width: 150px;" class="form-control  h-25 align-items-center ">
+                                                </div>
+                                                <div class="col-12 col-sm-12 col-md-4 col-lg-4"></div>
+                                                <div class="col-10 col-sm-10 col-md-2 col-lg-2">
+                                            <input list="productColumnsList" type="text"style="width: 150px;"class="form-control  h-25 align-items-center">
+ 
+                                                <datalist id="productColumnsList">
+                                                 <option > {{ get_header_row(sheet) }}</option>
+                                                 </datalist> 
+                                                 </div>
+                                               
+                                             </div>
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button
+                                              type="button"
+                                              class="btn btn-outline-dark"
+                                              (click)="modal.close('Save click')"
+                                            >
+                                              Save
+                                            </button>
+                                            <button
+                                            type="button"
+                                            class="btn btn-outline-dark"
+                                            (click)="modal.dismiss('Cross click')"
+                                          >
+                                            Close
+                                          </button>
+                                          </div>
+                                        </ng-template> -->
+                                  
+                                    
+                                      
+
+                            
+
+                              
+                                <button [routerLink]="['/customerhistory/new']"
+                                    class="btn btn-danger btn-create p-0 m-0 d-flex align-items-center justify-content-center"
+                                    type="submit">
+                                    <img src="./assets/img/plus.svg" class="m-16">
+                                </button>
+                            </div>
+
+                        </div>
+                        <!--End row-->
+                    </div>
+                    <!--End Page Header-->
+
+                    <div class="blog-post">
+                        <div class="table-responsive">
+                        <table class="table table-bordered mt-2">
+                            <thead>
+                                <tr>
+                                    <th scope="col">S.No</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Customer Id</th>
+                                    <th scope="col">Customer Account Id</th>
+                                    <th scope="col">Collected By</th>
+                                    <th scope="col">Reason</th>
+                                    <th scope="col">Transaction Amount</th>
+                                    <th scope="col">Action</th>
+                                    
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let customerhistory of customerhistoryList;let i=index">
+                                    <td>{{i+1}}</td>
+                                    <td>{{customerhistory.date}}</td>
+                                    <td>{{customerhistory.customerId}}</td>
+                                    <td>{{customerhistory.customerAccountId}}</td>
+                                    <td>{{customerhistory.collectedBy}}</td>
+                                    <td>{{customerhistory.reason}}</td>
+                                    <td>{{customerhistory.transactionAmount}}</td>
+                                    
+                                    
+                                    <td>
+                                        <button [routerLink]="['/customerhistory', customerhistory.customerId, 'view']"
+                                            class="btn  btn-xs tableicon bluclr btn-view-hover" data-title="Edit" data-toggle="modal"
+                                            data-target="#edit"><i class="fa fa-eye color-green"
+                                                aria-hidden="true"></i></button>
+                                        <button [routerLink]="['/customerhistory', customerhistory.id, 'edit']"
+                                            class="btn btn-xs tableicon bluclr btn-edit-hover" data-title="Edit" data-toggle="modal"
+                                            data-target="#edit"><i class="fa fa-edit color-blue"
+                                                aria-hidden="true"></i></button>
+                                        <button class="btn btn-xs tableicon bluclr btn-delete-hover" data-title="Edit"
+                                            data-toggle="modal" data-target="#edit" (click)="delete(customerhistory)"><i class="fa fa-trash  color-red"
+                                                aria-hidden="true"></i></button>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                       
+                        <!--grid using mat-->
+                       
+  <!--grid using mat-->
+
+
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- <div *ngIf="products && customerList.length > 0" class="mt-3">
+                      
+                        <div class="d-flex justify-content-end">
+                            <ngb-pagination class="d-flex justify-content-end" [collectionSize]="totalItems"
+                                [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true"
+                                [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+                        </div>
+                    </div> -->
+                    <!--End Page Content-->
+                </div>
+                <!-- End DataTales Start -->
+                </div>
+            </div>
+            <!--End ontainer Fluid-->
+        
+        <!--End Main-->
+    
+    <!--End Layout Sidenav Content-->

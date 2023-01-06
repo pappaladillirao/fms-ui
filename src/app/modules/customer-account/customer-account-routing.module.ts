@@ -8,13 +8,13 @@ import { Customeraccount, ICustomeraccount } from "src/app/shared/model/customer
 import { CustomerAccountCreateComponent } from "./customer-account-create/customer-account-create.component";
 import { CustomerAccountListComponent } from "./customer-account-list/customer-account-list.component";
 import { CustomerAccountViewComponent } from "./customer-account-view/customer-account-view.component";
-import { CustomeraccountService } from "./customer-account.service";
+import { CustomerAccountService } from "./customer-account.service";
 
 
 
 @Injectable({ providedIn: 'root' })
 export class CustomeraccountResolve implements Resolve<ICustomeraccount> {
-  constructor(private service: CustomeraccountService, private router: Router) {}
+  constructor(private service: CustomerAccountService, private router: Router) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<ICustomeraccount> | Observable<never> {
     const id = route.params['id'];
@@ -47,7 +47,7 @@ export const CustomeraccountRoute: Routes = [
     
     },
     {
-      path: ':id/view',
+      path: ':customerId/view',
       component: CustomerAccountViewComponent,
       // resolve: {
       //   Customer: CustomeraccountResolve,

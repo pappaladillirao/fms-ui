@@ -1,7 +1,33 @@
 <body class="sb-nav-fixed">
 
+    <div class="center form-group mb-2">
+        
+        <label for="contactNumber" ><strong><h5>Enter Contact Number:</h5></strong></label>
+        <input type="text"  id="contactNumber"
+        placeholder="enter contact number" name="contactNumber" [(ngModel)]="contactNumber">
+
+        <button class="button-style"type="button" (click)="searchCustomerByContact()">
+        <span>SEARCH</span>
+    </button>
+      
+    </div>
+
+    <div class="center" *ngIf="customerExit">
+        
+        <label for="account number" ><strong><h5>Account Number:</h5></strong></label>
+        <input type="text"  id="accountNumber"
+        placeholder="enter contact number" name="accountNumber" [(ngModel)]="accountNumber" />
+
+ 
+      
+    </div>
+
+           <br>
+           <br>        
+       
+
     <!--Layout Sidenav Content-->
-    <section id="layoutSidenav_content">
+    <section id="layoutSidenav_content" *ngIf="customerExit">
         <!--Main-->
         <main class="content-padding1">
             <!--Container Fluid-->
@@ -17,119 +43,57 @@
  
                     <div class="blog-post">
                         <form name="editForm" role="form" novalidate (ngSubmit)="save()" 
-                            class="mt-2">
+                            class="mt-2"  [formGroup]="editForm">
                             <div class="row  loginsrn">
  
                                 <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-                                    <!-- Form Group -->
-                                    <!-- <div class="form-group" [hidden]="!editForm.get('id')!.value">
-                                        <label for="id" class="mb-2">ID</label>
-                                        <input type="text" class="form-control " id="id" name="id"
-                                            formControlName="id" />
+                                   
+                                    <!-- <div class="form-group mb-2">
+                                        <label for="field_customerId" class="mb-2">Customer Id</label>
+                                        <input type="number" class="form-control " id="field_customerId"
+                                        placeholder="" name="customerId" formControlName="customerId">
+                                       
                                     </div> -->
- 
-                                    
-                                        <!-- <div
-                                                    *ngIf="editForm.get('startDate')!.invalid && (editForm.get('startDate')!.dirty || editForm.get('startDate')!.touched)">
-                                                    <small class="form-text text-danger"
-                                                        *ngIf="editForm.get('startDate')?.errors?.required"
-                                                        >
-                                                        This field is required.
-                                                    </small>
-                                                    </div>   -->
-                                    <!-- </div> -->
-                                    <!-- Form Group -->
-                                    
-                                    <!-- Form Group -->
-                                    <div class="form-group mb-2">
-                                        <label for="field_customer Id" class="mb-2">Customer Id</label>
-                                        <input type="number" class="form-control " id="field_Customer Id"
-                                        placeholder="" name="Customer Id" formControlName="Customer Id">
-                                        <!-- <div
-                                       *ngIf="editForm.get('region')!.invalid && (editForm.get('region')!.dirty || editForm.get('region')!.touched)">
-                                       <small class="form-text text-danger"
-                                           *ngIf="editForm.get('region')?.errors?.required"
-                                           >
-                                           This field is required.
-                                       </small>
-                                       </div>   -->
-                                    </div>
-                                    <!-- Form Group -->
-
-                                    
                                     
                                     <div class="form-group mb-2">
-                                        <label for="field_Transaction Amount" class="mb-2">Transaction Amount</label>
-                                        <input type="number" class="form-control " id="field_Transaction Amount"
-                                            placeholder="" name="Transaction Amount" formControlName="Transaction Amount">
-                                        <!-- <div
-                                            *ngIf="editForm.get('tempClosureDate')!.invalid && (editForm.get('tempClosureDate')!.dirty || editForm.get('tempClosureDate')!.touched)">
-                                            <small class="form-text text-danger"
-                                                *ngIf="editForm.get('tempClosureDate')?.errors?.required"
-                                                >
-                                                This field is required.
-                                            </small>
-                                            </div>   -->
+                                        <label for="field_transactionAmount" class="mb-2">Transaction Amount</label>
+                                        <input type="number" class="form-control " id="field_transactionAmount"
+                                            placeholder="" name="transactionAmount" formControlName="transactionAmount">
+                                        
                                     </div>
                                    
 
-                                   
-                                    
-                                   
-                                 
-                              
-                                </div>
+                                    <div class="form-group mb-2">
+                                        <label for="field_collectedBy" class="mb-2"> Collected By</label>
+                                        <input type="Text" class="form-control " id="field_collectedBy"
+                                        placeholder="" name="collected By" formControlName="collectedBy">
+                                      
+                                    </div>
+
+                                    </div>
                                 
 
+                               <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                                    
+
+                                <div class="form-group mb-2">
+                                    <label for="field_date" class="mb-2">Date</label>
+                                    <input type="date" class="form-control " id="field_date"
+                                    placeholder="" name="date" formControlName="date">
+                                    
+                                </div>
+                                     
 
 
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                                </div>
+
+                               <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                                    
                                     <div class="form-group mb-2">
-                                        <label for="field_Collected By" class="mb-2"> Collected By</label>
-                                        <input type="Text" class="form-control " id="field_Collected By"
-                                        placeholder="" name="Collected By" formControlName="Collected By">
-                                        <!-- <div
-                                       *ngIf="editForm.get('locationGroup')!.invalid && (editForm.get('locationGroup')!.dirty || editForm.get('locationGroup')!.touched)">
-                                       <small class="form-text text-danger"
-                                           *ngIf="editForm.get('locationGroup')?.errors?.required"
-                                           >
-                                           This field is required.
-                                       </small>
-                                       </div>   -->
-                                    </div>
-
-                                     <!-- Form Group -->
-                                     <div class="form-group mb-2">
                                         <label for="field_reason" class="mb-2">Reason</label>
                                         <input type="text" class="form-control " id="field_Reason"
                                         placeholder="" name="reason" formControlName="reason">
-                                        <!-- <div
-                                            *ngIf="editForm.get('promotedTogether')!.invalid && (editForm.get('promotedTogether')!.dirty || editForm.get('promotedTogether')!.touched)">
-                                            <small class="form-text text-danger"
-                                                *ngIf="editForm.get('promotedTogether')?.errors?.required"
-                                                >
-                                                This field is required.
-                                            </small>
-                                            </div>   -->
-                                    </div>
-
-
-                                </div>
-
-
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-                                    <div class="form-group mb-2">
-                                        <label for="field_Date" class="mb-2">Date</label>
-                                        <input type="datetime-local" class="form-control " id="field_Date"
-                                        placeholder="" name="Date" formControlName="Date">
-                                        <!-- <div
-                                       *ngIf="editForm.get('workDayDetails')!.invalid && (editForm.get('workDayDetails')!.dirty || editForm.get('workDayDetails')!.touched)">
-                                       <small class="form-text text-danger"
-                                           *ngIf="editForm.get('workDayDetails')?.errors?.required"
-                                           >
-                                           This field is required.
-                                       </small>
-                                       </div>   -->
+                                       
                                     </div>
                                     
                                      <!--save and cancel-->

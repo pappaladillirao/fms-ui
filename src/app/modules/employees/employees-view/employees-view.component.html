@@ -19,23 +19,23 @@
                         <!--End Page Header-->
      
                         <div class="blog-post">
-                            <form name="editForm" role="form" novalidate (ngSubmit)="save()" 
+                            <form name="editForm" role="form" novalidate 
                                 class="mt-2" [formGroup]="editForm">
                                 <div class="row  loginsrn">
      
                                     <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                                        
                                          <div class="form-group mb-2">
-                                            <label for="field_registerNumber" class="mb-2">Register Number</label>
-                                           <input type="text" class="form-control " id="field_registerNumber"
-                                            placeholder="" name="registerNumber" formControlName="registerNumber">
+                                            <label for="field_employeeName" class="mb-2">Employee Name</label>
+                                           <input type="text" class="form-control " id="field_employeeName"
+                                            placeholder="" name="employeeName" formControlName="employeeName">
                                            
                                         </div>
 
                                      <div class="form-group mb-2">
-                                            <label for="field_customerName" class="mb-2">Customer Name</label>
-                                            <input type="text" class="form-control " id="field_customerName"
-                                            placeholder="" name="customerName" formControlName="customerName">
+                                            <label for="field_joiningDate" class="mb-2">Joining Date</label>
+                                            <input type="date" class="form-control " id="field_joiningDate"
+                                            placeholder="" name="joiningDate" formControlName="joiningDate">
                                            
                                         </div>
 
@@ -46,9 +46,9 @@
                                          <div class="col-12 col-sm-12 col-md-6 col-lg-4">
 
                                         <div class="form-group mb-2">
-                                            <label for="field_customerType" class="mb-2">Customer Type</label>
-                                            <input type="text" class="form-control " id="field_customerType"
-                                                placeholder="" name="customerType" formControlName="customerType">
+                                            <label for="field_employeeSalaryType" class="mb-2">Employee Salary Type</label>
+                                            <input type="text" class="form-control " id="field_employeeSalaryType"
+                                                placeholder="" name="employeeSalaryType" formControlName="employeeSalaryType">
                                            
                                         </div>
 
@@ -88,19 +88,8 @@
 
 
                                         
-                                         <!--save and cancel-->
-                                        <div class="pull-right mt-2">
-                                            <button type="button" id="cancel-save" class="btn btn-danger mr-4">
-                                                
-                                                <span> <i class="fa fa-arrow-left mr-2" aria-hidden="true"></i>Cancel</span>
-                                            </button>
-                                            <button type="submit" id="save-entity" [disabled]=""
-                                                class="btn btn-success">
-                                                <span> <i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Save</span>
-                                            </button>
-
-                                
-                                        </div>
+                                     
+                                        
      
      
                                     </div> 

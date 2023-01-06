@@ -7,13 +7,13 @@ import { Customerhistory, ICustomerHistory } from "src/app/shared/model/customer
 import { CustomerHistoryCreateComponent } from "./customer-history-create/customer-history-create.component";
 import { CustomerHistoryListComponent } from "./customer-history-list/customer-history-list.component";
 import { CustomerHistoryViewComponent } from "./customer-history-view/customer-history-view.component";
-import { CustomerhistoryService } from "./customer-history.service";
+import { CustomerHistoryService } from "./customer-history.service";
 
 
 
 @Injectable({ providedIn: 'root' })
 export class CustomerhistoryResolve implements Resolve<ICustomerHistory> {
-  constructor(private service: CustomerhistoryService, private router: Router) {}
+  constructor(private service: CustomerHistoryService, private router: Router) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<ICustomerHistory> | Observable<never> {
     const id = route.params['id'];
@@ -46,7 +46,7 @@ export const CustomerhistoryRoute: Routes = [
     
     },
     {
-      path: ':id/view',
+      path: ':customerId/view',
       component: CustomerHistoryViewComponent,
       // resolve: {
       //   Customer: CustomerhistoryResolve,

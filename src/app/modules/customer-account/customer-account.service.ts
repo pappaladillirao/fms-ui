@@ -10,10 +10,15 @@ type EntityResponseType = HttpResponse<ICustomeraccount>;
 type EntityArrayResponseType = HttpResponse<ICustomeraccount[]>;
 
 @Injectable({ providedIn: "root" })
-export class CustomeraccountService {
-  public resourceUrl = "api/dms/customeraccount";
+export class CustomerAccountService {
+  
+  
+  
+  
+  public resourceUrl = "http://localhost:8080/api/customeraccount";
+ 
 
-  public pbResourceUrl = 'api/forecast/pb/service';
+  
 
   constructor(protected http: HttpClient) {}
 
@@ -23,10 +28,37 @@ export class CustomeraccountService {
       .pipe(map((res: EntityResponseType) => res));
   }
 
+
+  getCustomeraccountList():Observable<any> {debugger;
+    return this.http
+    .get<any>(this.resourceUrl,{observe:"response"})
+    .pipe(map((res:any)=>res));
+  }
+
+
   update(customeraccount: ICustomeraccount): Observable<EntityResponseType> {
     return this.http
       .put<ICustomeraccount>(this.resourceUrl, customeraccount, { observe: "response" })
       .pipe(map((res: EntityResponseType) => res));
+  }
+
+  getCustomerAccountbyCustomerId(customerId:any): Observable<EntityResponseType> {
+    return this.http
+    .get<ICustomeraccount>(`${this.resourceUrl}`+"/search/"+customerId,
+    {
+      observe: "response"
+    })
+    .pipe(map((res: any) =>res));
+    
+  }
+
+  getCustomerIdbyId(customerId: any): Observable<EntityResponseType>{
+    return this.http
+    .get<ICustomeraccount>(`${this.resourceUrl}`+"/search/"+customerId,
+    {
+      observe: "response"
+    })
+    .pipe(map((res: any) =>res));
   }
 
   find(id: number): Observable<EntityResponseType> {
@@ -34,6 +66,7 @@ export class CustomeraccountService {
       .get<ICustomeraccount>(`${this.resourceUrl}/${id}`, { observe: "response" })
       .pipe(map((res: EntityResponseType) => res));
   }
+
 
   query(req?: any): Observable<EntityArrayResponseType> {
     const options = createRequestOption(req);
@@ -67,18 +100,6 @@ export class CustomeraccountService {
         .pipe(map((res: EntityArrayResponseType) => res));
 
     }
-    getCustomeraccountList() : Observable<any> {
-      return this.http
-        .post<any>(this.resourceUrl + '/list', {
-          observe: 'response',
-        })
-        .pipe(map((res: any) => res));
-      }
-    getAllCustomeraccountList() : Observable<any> {
-    return this.http
-      .post<any>(this.pbResourceUrl + '/customeraccount', {
-        observe: 'response',
-      })
-      .pipe(map((res: any) => res));
-    }
+    
+   
 }

@@ -46,7 +46,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
  font-size: var(--application-font-size);
-  color: #333;
+  color: rgb(51, 13, 202);
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -78,7 +78,7 @@ body {
   --color-primary: #3e81c3;
   --color-secondary: #4285f4;
   --color-pimary-text: #243c51;
-  --color-contrast-text: #475f7b;
+  --color-contrast-text: #4285f4;
   --color-headerbg: #3e81c35e;
   --color-gray: #798478;
   --color-primary-contrast: #ffffff;
@@ -88,8 +88,8 @@ body {
   --color-iconbg4: #f3a712;
   --color-iconbg5: #798478;
   --color-input-line: #3e81c387;
-  --color-input-text: #526576;
-  --color-loginhover: #4285f4;
+  --color-input-text: #4285f4;
+  --color-loginhover: #4242f4;
   --color-loginbtn: #f3a712;
   --color-singuptxt: #243c51;
   --color-inputplace: #9ca7b1;
@@ -4368,10 +4368,10 @@ input:checked {
   height: calc(100vh - 246px);
   overflow-y: auto;
 }
-// .scroll-208{
-//   height: calc(100vh - 208px);
-//   overflow-y: auto;
-// }
+.scroll-208{
+  height: calc(100vh - 208px);
+  overflow-y: auto;
+}
 .scroll-212{
   height: calc(100vh - 212px);
   overflow-y: auto;
@@ -4467,5 +4467,24 @@ textarea {
 
 .cdk-drag-placeholder {
   opacity: 0;
+}
+
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.2);
+z-index: 1;
 }
 

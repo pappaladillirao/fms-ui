@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomeraccountRoutingModule } from './customer-account-routing.module';
 import { CustomerAccountListComponent } from './customer-account-list/customer-account-list.component';
@@ -20,6 +20,7 @@ import { CustomerAccountCreateComponent } from './customer-account-create/custom
     ReactiveFormsModule,
     CustomeraccountRoutingModule,
     NgbModule,
+    FormsModule
   ]
 })
 export class CustomerAccountModule { }

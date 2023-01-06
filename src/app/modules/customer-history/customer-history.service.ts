@@ -1,5 +1,5 @@
 import { HttpClient, HttpResponse } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { Injectable, TestabilityRegistry } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { ICustomerHistory } from "src/app/shared/model/customer-history.model";
@@ -10,10 +10,12 @@ type EntityResponseType = HttpResponse<ICustomerHistory>;
 type EntityArrayResponseType = HttpResponse<ICustomerHistory[]>;
 
 @Injectable({ providedIn: "root" })
-export class CustomerhistoryService {
-  public resourceUrl = "api/dms/customerhistory";
+export class CustomerHistoryService {
 
-  public pbResourceUrl = 'api/forecast/pb/service';
+ 
+  public resourceUrl = "http://localhost:8080/api/customeraccounthistory";
+
+ // public pbResourceUrl = 'api/forecast/pb/service';
 
   constructor(protected http: HttpClient) {}
 
@@ -27,6 +29,12 @@ export class CustomerhistoryService {
     return this.http
       .put<ICustomerHistory>(this.resourceUrl, customerhistory, { observe: "response" })
       .pipe(map((res: EntityResponseType) => res));
+  }
+
+  getCustomerhistoryList():Observable<any> {
+   return this.http
+   .get<any>(this.resourceUrl,{observe:"response"})
+   .pipe(map((res:any)=>res));
   }
 
   find(id: number): Observable<EntityResponseType> {
@@ -51,34 +59,34 @@ export class CustomerhistoryService {
     });
   }
 
-  uploadFiles(selectedFiles: FormData): Observable<EntityResponseType> {
-    // const copy = this.convertDateFromClient(selectedFiles);
+  //  uploadFiles(selectedFiles: FormData): Observable<EntityResponseType> {
+  // //   // const copy = this.convertDateFromClient(selectedFiles);
 
-    return this.http
-      .post(`${this.resourceUrl}/data/import`, selectedFiles, {
-        observe: "response",
-      })
-      .pipe(map((res: EntityResponseType) => res));
-  }
+  //   return this.http
+  //  .post(`${this.resourceUrl}/data/import`, selectedFiles, {
+  //       observe: "response",
+  //    })
+  //    .pipe(map((res: EntityResponseType) => res));
+  
 
-  getAllCustomerhistory(): Observable<EntityArrayResponseType> {
-      return this.http
-        .get<ICustomerHistory[]>(this.resourceUrl+'/product', {  observe: 'response' })
-        .pipe(map((res: EntityArrayResponseType) => res));
+  // getAllCustomerhistory(): Observable<EntityArrayResponseType> {
+  //     return this.http
+  //       .get<ICustomerHistory[]>(this.resourceUrl+'/product', {  observe: 'response' })
+  //       .pipe(map((res: EntityArrayResponseType) => res));
 
+  //   }
+  //   getCustomerhistoryList() : Observable<any> {
+      // return this.http
+  //       .post<any>(this.resourceUrl + '/list', {
+  //         observe: 'response',
+  //       })
+  //       .pipe(map((res: any) => res));
+  //     }
+  //   getAllCustomerhistoryList() : Observable<any> {
+  //   return this.http
+  //     .post<any>(this.pbResourceUrl + '/customerhistory', {
+  //       observe: 'response',
+  //     })
+  //     .pipe(map((res: any) => res));
+  //   }
     }
-    getCustomerhistoryList() : Observable<any> {
-      return this.http
-        .post<any>(this.resourceUrl + '/list', {
-          observe: 'response',
-        })
-        .pipe(map((res: any) => res));
-      }
-    getAllCustomerhistoryList() : Observable<any> {
-    return this.http
-      .post<any>(this.pbResourceUrl + '/customerhistory', {
-        observe: 'response',
-      })
-      .pipe(map((res: any) => res));
-    }
-}
